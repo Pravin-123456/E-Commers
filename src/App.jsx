@@ -9,6 +9,7 @@ import Support from "./Components/Support";
 import ContactUs from "./Components/ContactUs";
 import Cart from "./Components/Cart";
 import { CartProvider } from "./Components/CartContext";
+import Wishlist from "./Components/Wishlist";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/products" element={<Product />} />
             <Route path="/support" element={<Support />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/wishlist" element={<Wishlist />} />
           </Routes>
 
           <Footer />

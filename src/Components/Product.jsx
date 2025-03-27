@@ -1,10 +1,10 @@
 import React from "react";
 import { IoMdHeartEmpty } from "react-icons/io";
 import images from "./ImageProvider";
-import { useCart } from "./CartContext";
+import { useCart } from "./CartContext";  
 
 const Product = () => {
-  const { addToCart } = useCart();
+  const { addToCart, addToWishlist } = useCart();  
 
   const products = [
     {
@@ -108,8 +108,6 @@ const Product = () => {
             className="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 d-flex justify-content-center mx-2 my-3 py-3"
           >
             <div className="products d-flex flex-column justify-content-between text-center rounded shadow p-4 larger-card w-100">
-              
-              {/* Image Section */}
               <div className="img-con mb-4">
                 <img
                   src={product.imgUrl}
@@ -118,16 +116,12 @@ const Product = () => {
                 />
               </div>
 
-              {/* Product Info */}
               <div className="info-con">
                 <h5>{product.name}</h5>
                 <span className="fs-6 text-dark my-4">₹{product.price}</span>
                 <br />
 
-                {/* Rating and Cart Section */}
                 <div className="mt-4 d-flex justify-content-around align-items-center star">
-                  
-                  {/* Rating */}
                   <span className="d-flex align-items-center text-dark">
                     <img
                       src={images.Star}
@@ -137,11 +131,11 @@ const Product = () => {
                     {product.rating}
                   </span>
 
-                  {/* Heart Icon and Cart */}
                   <div className="d-flex align-items-center">
                     <button
                       className="border-0 bg-transparent"
-                      title="Add to Cart"
+                      title="Add to Wishlist"
+                      onClick={() => addToWishlist(product)}
                     >
                       <IoMdHeartEmpty className="fs-2 mx-1 text-danger" />
                     </button>
